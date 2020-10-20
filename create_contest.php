@@ -6,7 +6,7 @@ function alert($msg) {
 }
 function check_pass($i,$dbconfig,$password){
 	$password=crypt($password, '$2a$07$CCSCodersUnderSiegelul$');
-	$query=$dbconfig->prepare("SELECT * from {$i}_login where email=? and password=?");
+	$query=$dbconfig->prepare("SELECT * from {$i}_login where email=? and password=?");#harsimram
 	$query->bind_param("ss",$_SESSION['email'],$password);
 	$query->execute();
 	$query=$query->get_result();
